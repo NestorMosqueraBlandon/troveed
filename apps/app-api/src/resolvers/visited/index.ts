@@ -34,7 +34,7 @@ export default {
 
             if(exists){
                 await model.findOneAndDelete({ place, user: id })
-                user.places = Number(user.places) - 1;
+                user.places = user.places <= 0 ? Number(user.places) - 1 : 0;
                 await user.save();
                 return;
             }
