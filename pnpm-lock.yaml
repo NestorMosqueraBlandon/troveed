@@ -197,6 +197,12 @@ importers:
 
   apps/web:
     dependencies:
+      '@apollo/client':
+        specifier: ^3.10.4
+        version: 3.10.4(@types/react@18.2.61)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@apollo/experimental-nextjs-app-support':
+        specifier: ^0.10.1
+        version: 0.10.1(@apollo/client@3.10.4)(next@14.1.1)(react@18.2.0)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -332,6 +338,57 @@ packages:
       graphql: 16.8.1
     dev: false
 
+  /@apollo/client-react-streaming@0.10.1(@apollo/client@3.10.4)(react@18.2.0):
+    resolution: {integrity: sha512-8wM4y2Q1sSo4BTsemsI5G/G4U2pTM1r0BbwrCL/R2xMF4nSdJBTFO69fDGV+gaGt52bmNtV+MGbV2nJdURH2OQ==}
+    peerDependencies:
+      '@apollo/client': ^3.9.6
+      react: ^18
+    dependencies:
+      '@apollo/client': 3.10.4(@types/react@18.2.61)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      superjson: 2.2.1
+      ts-invariant: 0.10.3
+    dev: false
+
+  /@apollo/client@3.10.4(@types/react@18.2.61)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-51gk0xOwN6Ls1EbTG5svFva1kdm2APHYTzmFhaAdvUQoJFDxfc0UwQgDxGptzH84vkPlo1qunY1FuboyF9LI3Q==}
+    peerDependencies:
+      graphql: ^15.0.0 || ^16.0.0
+      graphql-ws: ^5.5.5
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      subscriptions-transport-ws:
+        optional: true
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
+      '@wry/caches': 1.0.1
+      '@wry/equality': 0.5.7
+      '@wry/trie': 0.5.0
+      graphql: 16.8.1
+      graphql-tag: 2.12.6(graphql@16.8.1)
+      hoist-non-react-statics: 3.3.2
+      optimism: 0.18.0
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      rehackt: 0.1.0(@types/react@18.2.61)(react@18.2.0)
+      response-iterator: 0.2.6
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
+      tslib: 2.6.2
+      zen-observable-ts: 1.2.5
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
+
   /@apollo/client@3.10.4(graphql@16.8.1):
     resolution: {integrity: sha512-51gk0xOwN6Ls1EbTG5svFva1kdm2APHYTzmFhaAdvUQoJFDxfc0UwQgDxGptzH84vkPlo1qunY1FuboyF9LI3Q==}
     peerDependencies:
@@ -367,6 +424,19 @@ packages:
       zen-observable-ts: 1.2.5
     transitivePeerDependencies:
       - '@types/react'
+    dev: false
+
+  /@apollo/experimental-nextjs-app-support@0.10.1(@apollo/client@3.10.4)(next@14.1.1)(react@18.2.0):
+    resolution: {integrity: sha512-oPDHqSq+cxpE+vm5GsQCYWnj68nTul0wQx/i8MHdjhSBcwmCbOO6oJtfZpXGX8FTzY8Hvb85FrMqIeqQtFTsMw==}
+    peerDependencies:
+      '@apollo/client': ^3.9.6
+      next: ^13.4.1 || ^14.0.0
+      react: ^18
+    dependencies:
+      '@apollo/client': 3.10.4(@types/react@18.2.61)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+      '@apollo/client-react-streaming': 0.10.1(@apollo/client@3.10.4)(react@18.2.0)
+      next: 14.1.1(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
     dev: false
 
   /@apollo/protobufjs@1.2.7:
@@ -6596,6 +6666,13 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /copy-anything@3.0.5:
+    resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
+    engines: {node: '>=12.13'}
+    dependencies:
+      is-what: 4.1.16
+    dev: false
+
   /core-js-compat@3.37.1:
     resolution: {integrity: sha512-9TNiImhKvQqSUkOvk/mMRZzOANTiEVC7WaBNhHcKM7x+/5E1l5NvsysR19zuDQScE8k+kfQXWRN3AtS/eOSHpg==}
     dependencies:
@@ -8780,6 +8857,11 @@ packages:
       call-bind: 1.0.5
       get-intrinsic: 1.2.2
     dev: true
+
+  /is-what@4.1.16:
+    resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
+    engines: {node: '>=12.13'}
+    dev: false
 
   /is-wsl@1.1.0:
     resolution: {integrity: sha512-gfygJYZ2gLTDlmbWMI0CE2MwnFzSN/2SZfkMlItC4K/JBlsWVDB0bO6XhqcY13YXE7iMcAJnzTCJjPiTeJJ0Mw==}
@@ -11264,6 +11346,21 @@ packages:
         optional: true
     dev: false
 
+  /rehackt@0.1.0(@types/react@18.2.61)(react@18.2.0):
+    resolution: {integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==}
+    peerDependencies:
+      '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@types/react': 18.2.61
+      react: 18.2.0
+    dev: false
+
   /require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -11965,6 +12062,13 @@ packages:
 
   /sudo-prompt@9.2.1:
     resolution: {integrity: sha512-Mu7R0g4ig9TUuGSxJavny5Rv0egCEtpZRNMrZaYS1vxkiIxGiGUwoezU3LazIQ+KE04hTrTfNPgxU5gzi7F5Pw==}
+    dev: false
+
+  /superjson@2.2.1:
+    resolution: {integrity: sha512-8iGv75BYOa0xRJHK5vRLEjE2H/i4lulTjzpUXic3Eg8akftYjkmQDa8JARQ42rlczXyFR3IeRoeFCc7RxHsYZA==}
+    engines: {node: '>=16'}
+    dependencies:
+      copy-anything: 3.0.5
     dev: false
 
   /supports-color@5.5.0:

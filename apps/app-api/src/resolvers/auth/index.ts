@@ -18,7 +18,7 @@ export default {
 
             user.lastLogin = new Date().toString();
 
-            const token = sign({id: user.id}, JWT_SECRET!, { expiresIn: '15d' });
+            const token = sign({id: user._id}, JWT_SECRET!, { expiresIn: '15d' });
 
             return { token }
         }

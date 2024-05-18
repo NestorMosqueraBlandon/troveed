@@ -27,7 +27,7 @@ export default {
             const modelUser = getModel<User>(Collection.USERS, UserSchemaMongo);
 
             const user = await modelUser.findById(id)
-            const exists = await model.findOne({place});
+            const exists = await model.findOne({place, user: id});
 
             if(!user)
                 return;
