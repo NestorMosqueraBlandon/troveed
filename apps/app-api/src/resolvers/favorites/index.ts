@@ -24,7 +24,7 @@ export default {
         createFavorite: async (_: any, { place }: { place: string }, ctx: any ) => {
             const { id } = await verifyToken(ctx) as {id: string};
             const model = getModel<Favorite>(Collection.FAVORITES, FavoriteSchemaMongo);
-            const exists = await model.findOne({place});
+            const exists = await model.findOne({place, user: id});
             if(exists){
                 await model.findOneAndDelete({ place, user: id })
                 return;
