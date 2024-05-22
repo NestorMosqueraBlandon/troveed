@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import { Place } from "./place";
 import { StatusType } from '../../common';
+import * as crypto from "crypto";
 
 export const PlaceSchemaMongo = new Schema<Place>({
     _id: { type: String, unique: true, default: () => crypto.randomUUID() },

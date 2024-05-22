@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import { Favorite } from "./favorite";
 import { StatusType } from '../../common';
+import * as crypto from "crypto";
 
 export const FavoriteSchemaMongo = new Schema<Favorite>({
     _id: { type: String, unique: true, default: () => crypto.randomUUID() },

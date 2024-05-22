@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import { Visited } from "./visited";
 import { StatusType } from '../../common';
+import * as crypto from "crypto";
 
 export const VisitedSchemaMongo = new Schema<Visited>({
     _id: { type: String, unique: true, default: () => crypto.randomUUID() },

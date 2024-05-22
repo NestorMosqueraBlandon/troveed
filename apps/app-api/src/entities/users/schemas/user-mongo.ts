@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import { User } from './user';
 import { StatusType } from '../../common';
+import * as crypto from "crypto";
 
 export const UserSchemaMongo = new Schema<User>({
     _id: { type: String, unique: true, default: () => crypto.randomUUID() },
