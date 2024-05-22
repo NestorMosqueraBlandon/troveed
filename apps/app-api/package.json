@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsx watch src/server/index.ts"
+    "dev": "npx tsx watch src/server/index.ts",
+    "build": "npx tsc",
+    "start": "node build/server/index.js"
   },
   "keywords": [],
   "author": "",
